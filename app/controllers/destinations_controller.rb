@@ -6,6 +6,9 @@ class DestinationsController < ApplicationController
   end
 
   def show
+    destination_info = DestinationFacade.new
+    @forecast = destination_info.get_forecast(@destination.name)
+    @image = destination_info.get_image(@forecast.summary)
   end
 
   def new

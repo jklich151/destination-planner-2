@@ -1,16 +1,16 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
 
-  <h3>
+  <h3 class="name">
     <%= @destination.name %>
   </h3>
 
-  <p>
+  <p class="zipcode">
     <strong>Zip:</strong>
     <%= @destination.zip %>
   </p>
 
-  <p>
+  <p class="description">
     <strong>Description:</strong>
     <%= @destination.description %>
   </p>
@@ -19,7 +19,16 @@
 
   <div class="row">
     <h4>Forecast for <%= @destination.name %>:</h4>
-
+    <section class="forecast">
+      <li class="date"><%= @forecast.date %></li>
+      <li class="current_temp"><%= @forecast.current_temp %></li>
+      <li class="high_temp"><%= @forecast.high_temp %></li>
+      <li class="low_temp"><%= @forecast.low_temp %></li>
+      <li class="summary"><%= @forecast.summary %></li>
+    </section>
+    <section id="image">
+      <%= image_tag(@image) %>
+    </section>
   </div>
 
   <div class="row">
